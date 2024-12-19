@@ -92,7 +92,9 @@ const GenreCombiner = () => {
           movies.map((movie) => (
             <div
               key={movie.id}
-              className={`movie-card ${expandedMovieId === movie.id ? "expanded" : ""}`}
+              className={`movie-card ${
+                expandedMovieId === movie.id ? "expanded" : ""
+              }`}
               onClick={() => toggleMovieDetails(movie.id)}
             >
               <img
@@ -103,14 +105,18 @@ const GenreCombiner = () => {
               <div className="movie-title">{movie.title}</div>
               {expandedMovieId === movie.id && (
                 <div className="movie-details">
-                  <p><strong>Release Date:</strong> {movie.release_date}</p>
+                  <p>
+                    <strong>Release Date:</strong> {movie.release_date}
+                  </p>
                   <p>{movie.overview}</p>
                 </div>
               )}
             </div>
           ))
         ) : (
-          !error && <p>No movies found. Try different genres.</p>
+          !error && (
+            <p className="no-movies">No movies found. Try different genres.</p>
+          )
         )}
       </div>
     </div>

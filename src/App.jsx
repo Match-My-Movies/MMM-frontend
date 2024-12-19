@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import GenreCombiner from "./pages/GenreCombiner";
+import "./App.css";
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
+
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/genres" element={<GenreCombiner />} />
-      </Routes>
-    </Router>
+    <div className={darkMode ? "dark-theme" : "light-theme"}>
+      <Router>
+        <Navbar />
+        <div className="main-content">
+          <Routes>
+            <Route path="/genres" element={<GenreCombiner />} />
+          </Routes>
+        </div>
+        <button className="theme-toggle-btn" onClick={toggleTheme}>
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+      </Router>
+    </div>
   );
 };
 

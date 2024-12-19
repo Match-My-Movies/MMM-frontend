@@ -1,59 +1,104 @@
 .genre-combiner {
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
+  padding: 20px;
+  width: 100%;
+  min-height: calc(100vh - 70px); /* Adjust for navbar height */
 }
+
 .inputs {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
 }
+
 .dropdown {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 10px;
+  border: 2px solid #6c63ff;
+  border-radius: 25px;
+  background-color: white;
+  color: #333;
 }
+
 .btn {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #6c63ff, #007bff);
   color: white;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
 }
-.btn:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #5a52e0, #0056b3);
 }
+
 .movies {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
   gap: 20px;
+  justify-content: center;
+  min-height: 300px; /* Ensure some height for centering */
+  align-items: center;
 }
+
+.no-movies {
+  grid-column: 1 / -1; /* Span the entire grid */
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  padding: 20px;
+}
+
 .movie-card {
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 10px;
-  background-color: white;
+  background-color: #fff;
+  color: #333;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
+
 .movie-card:hover {
   transform: scale(1.05);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
 .movie-poster {
   width: 100%;
+  height: auto;
   border-radius: 4px;
 }
+
 .movie-title {
+  font-size: 1.2rem;
   font-weight: bold;
+  margin-top: 10px;
   text-align: center;
-  margin-top: 10px;
 }
+
 .movie-details {
-  margin-top: 10px;
+  display: none;
+  padding: 10px;
+  font-size: 0.9rem;
+  line-height: 1.4;
   text-align: left;
-  font-size: 14px;
+  color: #555;
+}
+
+.movie-card.expanded {
+  transform: scale(1.02);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.movie-card.expanded .movie-details {
+  display: block;
 }

@@ -1,42 +1,49 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #6c63ff, #007bff);
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it's above other elements */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.theme-toggle-btn:hover {
+  background: linear-gradient(135deg, #5a52e0, #0056b3);
+  transform: scale(1.05);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Light Theme */
+.light-theme {
+  background-color: #ffffff; /* Set light theme background */
+  color: #000000; /* Set light theme text color */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Dark Theme */
+.dark-theme {
+  background-color: #121212; /* Set dark theme background */
+  color: #ffffff; /* Set dark theme text color */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.card {
-  padding: 2em;
+/* Adjust main content to fill remaining space */
+.main-content {
+  flex: 1; /* Allow main content to grow and fill available space */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.main-content {
+  flex: 1;
+  padding-top: 70px; /* Add padding to prevent overlap with navbar */
 }
