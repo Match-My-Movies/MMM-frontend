@@ -1,0 +1,78 @@
+.random-movie {
+    max-width: 800px; /* Limit the feature section width */
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    min-height: calc(100vh - 70px); /* Adjust for navbar height */
+  }
+  
+  .inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    background: linear-gradient(135deg, #6c63ff, #007bff);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #5a52e0, #0056b3);
+  }
+  
+  .movie-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: inherit;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    max-width: 200px; /* Smaller default size */
+    margin: 15px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .movie-poster {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .movie-title {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 0.9rem; /* Compact font size */
+    text-align: center;
+  }
+  
+  .movie-details {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 0.8rem; /* Smaller detail text */
+    line-height: 1.3;
+  }
+  
+  .expanded {
+    max-width: 300px; /* Limit expanded size */
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle background change */
+    padding: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 15px auto; /* Center expanded card */
+    transition: max-width 0.3s ease-in-out, padding 0.3s ease-in-out;
+  }
+  

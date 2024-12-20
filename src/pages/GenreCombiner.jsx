@@ -88,7 +88,7 @@ const GenreCombiner = () => {
       </div>
       {error && <p className="error">{error}</p>}
       <div className="movies">
-        {movies.length > 0 ? (
+        {movies.length > 0 && (
           movies.map((movie) => (
             <div
               key={movie.id}
@@ -113,10 +113,6 @@ const GenreCombiner = () => {
               )}
             </div>
           ))
-        ) : (
-          !error && (
-            <p className="no-movies">No movies found. Try different genres.</p>
-          )
         )}
       </div>
     </div>

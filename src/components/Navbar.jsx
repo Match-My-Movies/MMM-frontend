@@ -14,9 +14,6 @@ const Navbar = () => {
             <Link to="/genres">Combine Genres</Link>
           </li>
           <li>
-            <Link to="/pairing">Movie Pairing</Link>
-          </li>
-          <li>
             <Link to="/random">Random Movie</Link>
           </li>
         </ul>
