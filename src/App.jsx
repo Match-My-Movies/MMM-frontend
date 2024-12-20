@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { FaSun, FaMoon } from "react-icons/fa"; // Import icons from react-icons
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import GenreCombiner from "./pages/GenreCombiner";
@@ -25,7 +26,7 @@ const App = () => {
           </Routes>
         </div>
         <button className="theme-toggle-btn" onClick={toggleTheme}>
-          {darkMode ? "Light Mode" : "Dark Mode"}
+          {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
         </button>
       </Router>
     </div>
