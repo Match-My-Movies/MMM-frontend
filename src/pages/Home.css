@@ -1,0 +1,66 @@
+/* General Page Styles */
+.home-page {
+  min-height: calc(100vh - 70px); /* Adjust for navbar height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: inherit; /* Matches theme */
+  color: inherit; /* Matches theme */
+}
+
+/* Header Section */
+.home-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.home-logo {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.home-tagline {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* Buttons Section */
+.home-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 40px; /* Add vertical spacing between rows */
+  column-gap: 50px; /* Add horizontal spacing between buttons */
+  margin-top: 30px; /* Create space between tagline and buttons */
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Adjust for Dark Theme */
+.dark-theme .btn {
+  background-color: #333;
+  color: white;
+}
+
+.dark-theme .btn:hover {
+  background-color: #555;
+}

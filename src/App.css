@@ -22,28 +22,20 @@
 
 /* Light Theme */
 .light-theme {
-  background-color: #ffffff; /* Set light theme background */
-  color: #000000; /* Set light theme text color */
+  background-color: #ffffff;
+  color: #000000;
   transition: background-color 0.3s, color 0.3s;
 }
 
 /* Dark Theme */
 .dark-theme {
-  background-color: #121212; /* Set dark theme background */
-  color: #ffffff; /* Set dark theme text color */
+  background-color: #121212;
+  color: #ffffff;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Adjust main content to fill remaining space */
+/* Navbar Height Adjustment */
 .main-content {
-  flex: 1; /* Allow main content to grow and fill available space */
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  padding: 20px;
-}
-
-.main-content {
-  flex: 1;
-  padding-top: 70px; /* Add padding to prevent overlap with navbar */
+  padding-top: 70px; /* Ensure content starts below navbar */
+  flex: 1; /* Ensure full height usage */
 }
