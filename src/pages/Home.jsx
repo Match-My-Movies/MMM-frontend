@@ -7,7 +7,7 @@ const Home = () => {
     <div className="home-page">
       <header className="home-header">
         <h1 className="home-logo">🎬 Match My Movies</h1>
-        <p className="home-tagline">Your guide to the perfect movie for every moment.</p>
+        <p className="home-tagline">Find the perfect movie for your every moment.</p>
       </header>
       <div className="home-content">
         <Link to="/genres" className="btn">
