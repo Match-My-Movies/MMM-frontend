@@ -10,14 +10,12 @@ const Home = () => {
         <p className="home-tagline">Your guide to the perfect movie for every moment.</p>
       </header>
       <div className="home-content">
-        <div className="home-buttons">
-          <Link to="/genres" className="btn">
-            Combine Genres
-          </Link>
-          <Link to="/random" className="btn">
-            Random Movie
-          </Link>
-        </div>
+        <Link to="/genres" className="btn">
+          Combine Genres
+        </Link>
+        <Link to="/random" className="btn">
+          Random Movie
+        </Link>
       </div>
     </div>
   );

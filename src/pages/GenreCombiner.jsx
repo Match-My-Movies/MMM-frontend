@@ -42,7 +42,6 @@ const GenreCombiner = () => {
       setMovies(response.data);
     } catch (err) {
       setError("Failed to fetch movies. Please try again.");
-      console.error(err);
     }
   };
 
@@ -52,7 +51,7 @@ const GenreCombiner = () => {
 
   return (
     <div className="genre-combiner">
-      <h1>Genre Combiner</h1>
+      <h1>Combine Genres</h1>
       <div className="inputs">
         <select
           value={genre1}
@@ -88,32 +87,30 @@ const GenreCombiner = () => {
       </div>
       {error && <p className="error">{error}</p>}
       <div className="movies">
-        {movies.length > 0 && (
-          movies.map((movie) => (
-            <div
-              key={movie.id}
-              className={`movie-card ${
-                expandedMovieId === movie.id ? "expanded" : ""
-              }`}
-              onClick={() => toggleMovieDetails(movie.id)}
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                className="movie-poster"
-              />
-              <div className="movie-title">{movie.title}</div>
-              {expandedMovieId === movie.id && (
-                <div className="movie-details">
-                  <p>
-                    <strong>Release Date:</strong> {movie.release_date}
-                  </p>
-                  <p>{movie.overview}</p>
-                </div>
-              )}
-            </div>
-          ))
-        )}
+        {movies.map((movie) => (
+          <div
+            key={movie.id}
+            className={`movie-card ${
+              expandedMovieId === movie.id ? "expanded" : ""
+            }`}
+            onClick={() => toggleMovieDetails(movie.id)}
+          >
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+              className="movie-poster"
+            />
+            <div className="movie-title">{movie.title}</div>
+            {expandedMovieId === movie.id && (
+              <div className="movie-details">
+                <p>
+                  <strong>Release Date:</strong> {movie.release_date}
+                </p>
+                <p>{movie.overview}</p>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

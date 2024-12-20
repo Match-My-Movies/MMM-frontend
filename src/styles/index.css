@@ -15,3 +15,24 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #6c63ff, #007bff);
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-toggle-btn:hover {
+  background: linear-gradient(135deg, #5a52e0, #0056b3);
+  transform: scale(1.05);
+}
