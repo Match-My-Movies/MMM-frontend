@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          🎬 Match My Movies
+          🎬 MMM
         </Link>
         <ul className="navbar-menu">
           <li>

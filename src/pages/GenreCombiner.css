@@ -1,33 +1,76 @@
+/* Genre Combiner Container */
 .genre-combiner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
   min-height: calc(100vh - 70px); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center; 
 }
 
+/* Feature Text */
+.genre-combiner h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  text-align: center; 
+}
+
+/* Input Section */
 .inputs {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  width: 100%; 
 }
 
+/* Dropdown Styling */
 .dropdown {
-  padding: 10px;
-  border: 2px solid #6c63ff;
-  border-radius: 25px;
-  background-color: white;
-  color: #333;
+  padding: 12px 16px;
+  border: 2px solid var(--primary-color);
+  border-radius: 32px;
+  background-color: var(--dropdown-background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  appearance: none; 
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ccc' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 1.2rem;
+  max-width: 300px;
 }
 
+.dropdown:hover {
+  border-color: var(--primary-hover-color);
+  background-color: var(--dropdown-hover-background-color);
+  color: var(--hover-text-color);
+}
+
+.dropdown:focus {
+  border-color: var(--primary-hover-color);
+  box-shadow: 0 0 8px rgba(90, 82, 224, 0.5);
+}
+
+/* Button Styling */
 .btn {
   background: linear-gradient(135deg, #6c63ff, #007bff);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s;
 }
@@ -37,33 +80,25 @@
   background: linear-gradient(135deg, #5a52e0, #0056b3);
 }
 
+/* Movie Grid */
 .movies {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   justify-content: center;
-  min-height: 300px; 
-  align-items: center;
+  width: 100%;
 }
 
-.no-movies {
-  grid-column: 1 / -1; 
-  text-align: center;
-  font-size: 1.2rem;
-  color: #555;
-  padding: 20px;
-}
-
+/* Movie Card */
 .movie-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--card-background-color);
+  color: var(--text-color);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .movie-card:hover {
@@ -71,12 +106,14 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Movie Poster */
 .movie-poster {
   width: 100%;
   height: auto;
   border-radius: 4px;
 }
 
+/* Movie Title */
 .movie-title {
   font-size: 1.2rem;
   font-weight: bold;
@@ -84,21 +121,38 @@
   text-align: center;
 }
 
+/* Movie Details */
 .movie-details {
   display: none;
   padding: 10px;
   font-size: 0.9rem;
   line-height: 1.4;
   text-align: left;
-  color: #555;
+  color: var(--text-secondary-color);
+  transition: color 0.3s ease; 
 }
 
+/* Expanded Movie Card */
 .movie-card.expanded {
   transform: scale(1.02);
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--card-expanded-background-color);
 }
 
 .movie-card.expanded .movie-details {
   display: block;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .movies {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .dropdown {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    background-size: 1rem;
+    max-width: 100%;
+  }
 }

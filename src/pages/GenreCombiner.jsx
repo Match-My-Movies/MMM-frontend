@@ -25,12 +25,14 @@ const GenreCombiner = () => {
     { id: 37, name: "Western" },
   ];
 
+  // State variables
   const [genre1, setGenre1] = useState("");
   const [genre2, setGenre2] = useState("");
   const [movies, setMovies] = useState([]);
   const [expandedMovieId, setExpandedMovieId] = useState(null);
   const [error, setError] = useState("");
 
+  // Fetch movies based on selected genres
   const fetchMovies = async () => {
     setMovies([]);
     setError("");
@@ -45,6 +47,7 @@ const GenreCombiner = () => {
     }
   };
 
+  // Toggle movie details expansion
   const toggleMovieDetails = (movieId) => {
     setExpandedMovieId((prevId) => (prevId === movieId ? null : movieId));
   };
@@ -53,6 +56,7 @@ const GenreCombiner = () => {
     <div className="genre-combiner">
       <h1>Combine Genres</h1>
       <div className="inputs">
+        {/* Dropdowns for genre selection */}
         <select
           value={genre1}
           onChange={(e) => setGenre1(e.target.value)}
@@ -85,7 +89,9 @@ const GenreCombiner = () => {
           Combine
         </button>
       </div>
+      {/* Error message */}
       {error && <p className="error">{error}</p>}
+      {/* Movie grid */}
       <div className="movies">
         {movies.map((movie) => (
           <div

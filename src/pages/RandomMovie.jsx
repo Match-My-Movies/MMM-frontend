@@ -9,7 +9,8 @@ const RandomMovie = () => {
 
   const fetchRandomMovie = async () => {
     setError("");
-    setExpanded(false); 
+    setExpanded(false);
+
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/movies/random`
@@ -21,9 +22,7 @@ const RandomMovie = () => {
     }
   };
 
-  const toggleDetails = () => {
-    setExpanded((prev) => !prev);
-  };
+  const toggleDetails = () => setExpanded((prev) => !prev);
 
   return (
     <div className="random-movie">
